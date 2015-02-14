@@ -2249,3 +2249,622 @@ Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
 ActivitiesControllerTest: test_returns_a_list_of_activities
 -----------------------------------------------------------
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-04 14:54:14', '2015-02-04 14:54:14', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-04 14:54:14', '2015-02-04 14:54:14', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-04 14:54:14', '2015-02-04 14:54:14', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-04 14:54:14', '2015-02-04 14:54:14', 298486374)
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-04 15:54:14 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 30ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-04 15:54:14 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.5ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-13 09:26:13', '2015-02-13 09:26:13', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-13 09:26:13', '2015-02-13 09:26:13', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-13 09:26:13', '2015-02-13 09:26:13', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-13 09:26:13', '2015-02-13 09:26:13', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-13 10:26:13 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 25ms (Views: 9.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-13 10:26:13 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.0ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 13:50:36', '2015-02-14 13:50:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 13:50:36', '2015-02-14 13:50:36', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 13:50:36', '2015-02-14 13:50:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 13:50:36', '2015-02-14 13:50:36', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 14:50:36 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 14:50:37 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 13:50:37.036349"], ["updated_at", "2015-02-14 13:50:37.036349"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 14:50:37 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.2ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 13:50:57', '2015-02-14 13:50:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 13:50:57', '2015-02-14 13:50:57', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 13:50:57', '2015-02-14 13:50:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 13:50:57', '2015-02-14 13:50:57', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 14:50:57 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 34ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 14:50:57 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.3ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 13:56:23', '2015-02-14 13:56:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 13:56:23', '2015-02-14 13:56:23', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 13:56:23', '2015-02-14 13:56:23', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 13:56:23', '2015-02-14 13:56:23', 298486374)
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 14:56:23 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 20ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 14:56:23 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 13:56:23.788423"], ["updated_at", "2015-02-14 13:56:23.788423"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 14:56:23 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (3.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.2ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:35:03', '2015-02-14 14:35:03', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:35:03', '2015-02-14 14:35:03', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:35:03', '2015-02-14 14:35:03', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:35:03', '2015-02-14 14:35:03', 298486374)
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:35:04.028049"], ["updated_at", "2015-02-14 14:35:04.028049"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:35:04 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.4ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 30ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:35:04 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:35:04 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.4ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:38:53', '2015-02-14 14:38:53', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:38:53', '2015-02-14 14:38:53', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:38:53', '2015-02-14 14:38:53', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:38:53', '2015-02-14 14:38:53', 298486374)
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------
+ListingCategoriesTestTest: test_returns_categories_in_JSON
+----------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 15:38:53 +0100
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:38:53 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 19ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:38:53 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:38:53.565155"], ["updated_at", "2015-02-14 14:38:53.565155"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:38:53 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:42:17', '2015-02-14 14:42:17', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:42:17', '2015-02-14 14:42:17', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:42:17', '2015-02-14 14:42:17', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:42:17', '2015-02-14 14:42:17', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:42:17 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 19ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:42:17 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:42:17.203225"], ["updated_at", "2015-02-14 14:42:17.203225"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:42:17 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------
+ListingCategoriesTestTest: test_returns_categories_in_JSON
+----------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 15:42:17 +0100
+Processing by Api::CategoriesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:43:33', '2015-02-14 14:43:33', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:43:33', '2015-02-14 14:43:33', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:43:33', '2015-02-14 14:43:33', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:43:33', '2015-02-14 14:43:33', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingCategoriesTest: test_returns_categories_in_JSON
+------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 15:43:33 +0100
+Processing by Api::CategoriesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+Completed 500 Internal Server Error in 17ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:43:33 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:43:33 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:43:33.202095"], ["updated_at", "2015-02-14 14:43:33.202095"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:43:33 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.2ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:52:24', '2015-02-14 14:52:24', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:52:24', '2015-02-14 14:52:24', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:52:24', '2015-02-14 14:52:24', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:52:24', '2015-02-14 14:52:24', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingCategoriesTest: test_returns_categories_in_JSON
+------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 15:52:24 +0100
+Processing by Api::CategoriesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+Completed 500 Internal Server Error in 15ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:52:24.515651"], ["updated_at", "2015-02-14 14:52:24.515651"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:52:24 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:52:24 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:52:24 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.5ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:56:55', '2015-02-14 14:56:55', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:56:55', '2015-02-14 14:56:55', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:56:55', '2015-02-14 14:56:55', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:56:55', '2015-02-14 14:56:55', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:56:55.031637"], ["updated_at", "2015-02-14 14:56:55.031637"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:56:55 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:56:55 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:56:55 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+------------------------------------------------------
+ListingCategoriesTest: test_returns_categories_in_JSON
+------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 15:56:55 +0100
+Processing by Api::CategoriesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:57:15', '2015-02-14 14:57:15', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 14:57:15', '2015-02-14 14:57:15', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:57:15', '2015-02-14 14:57:15', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 14:57:15', '2015-02-14 14:57:15', 298486374)
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 14:57:15.448415"], ["updated_at", "2015-02-14 14:57:15.448415"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 15:57:15 +0100
+Processing by Api::ActivitiesController#show as HTML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}, "id"=>"980190963"}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:57:15 +0100
+Processing by Api::ActivitiesController#index as XML
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 15:57:15 +0100
+Processing by Api::ActivitiesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingCategoriesTest: test_returns_categories_in_JSON
+------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 15:57:15 +0100
+Processing by Api::CategoriesController#index as JSON
+  Parameters: {"constraits"=>{"subdomain"=>"api"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.3ms)[0m  [1mDELETE FROM "activities"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 15:05:28', '2015-02-14 15:05:28', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'f', 1, '2015-02-14 15:05:28', '2015-02-14 15:05:28', 298486374)[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "categories"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 15:05:28', '2015-02-14 15:05:28', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2015-02-14 15:05:28', '2015-02-14 15:05:28', 298486374)
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_JSON
+------------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 16:05:28 +0100
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------------------
+ListingActivitiesTest: test_returns_activities_in_XML
+-----------------------------------------------------
+Started GET "/activities" for 127.0.0.1 at 2015-02-14 16:05:28 +0100
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------
+ListingActivitiesTest: test_returns_activity_by_id
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "description", "indoors", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Kalmar Tennisklubb"], ["description", "Bra tennisklubb"], ["indoors", "t"], ["category_id", 1], ["created_at", "2015-02-14 15:05:28.569687"], ["updated_at", "2015-02-14 15:05:28.569687"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/activities/980190963" for 127.0.0.1 at 2015-02-14 16:05:28 +0100
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------
+ActivitiesControllerTest: test_returns_a_list_of_activities
+-----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ListingCategoriesTest: test_returns_categories_in_JSON
+------------------------------------------------------
+Started GET "/categories" for 127.0.0.1 at 2015-02-14 16:05:28 +0100
+  [1m[35m (0.1ms)[0m  rollback transaction

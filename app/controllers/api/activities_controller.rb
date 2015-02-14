@@ -14,6 +14,8 @@ module Api
         # Response header will show Content-Type: application/xml
         # curl -IH "Access: application/xml" localhost:3000/activities
         format.xml { render xml: activities, status: 200 }
+
+        #format.html {render }
       end
     end
 

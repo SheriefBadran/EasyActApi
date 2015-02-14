@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  namespace :api do
-  get 'activities/index'
-  end
+  # namespace :api do
+  # get 'activities/index'
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   namespace :api, path: '/', constraits: {subdomain: 'api'} do
+    resources :categories
     resources :activities
   end
 
